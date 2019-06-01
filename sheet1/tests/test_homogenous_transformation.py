@@ -35,4 +35,19 @@ def test_composition():
     assert(M3[0,1] == -0.5000001943375613)
     assert(M3[2,2] == 1.)
 
+def test_landmark_location():
+    # express landmark location relative to x in homogeneous coordinates by
+    # adding a scaling value 1.
+    z = [2.,0.,1.]
+    
+    x = [1.,1., np.pi/2.]
+    
+    M = v2t(x)
+    landmark_location = np.dot(M,z)
+    print(landmark_location)
+    assert(landmark_location[0] == 1.0000000000000002)
+    assert(landmark_location[1] == 3.)
+    assert(landmark_location[2] == 1.)
 
+
+    
