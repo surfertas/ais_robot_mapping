@@ -7,6 +7,7 @@ Usage
 -----
 
 From command line:
+
     conda create -f environment.yml
     source activate robo_map
     cd robot_mapping
@@ -14,6 +15,7 @@ From command line:
 
 
 To test:
+    
     cd robot_mapping
     python -m pytest ../tests/
 
