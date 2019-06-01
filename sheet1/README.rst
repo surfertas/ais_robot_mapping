@@ -27,4 +27,5 @@ To test:
 License
 -------
 MIT_
+
 .. _MIT: https://choosealicense.com/licenses/mit/
