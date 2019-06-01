@@ -26,4 +26,5 @@ To test:
 
 License
 -------
-`MIT<https://choosealicense.com/licenses/mit/>`_
+MIT_
+.. _MIT: https://choosealicense.com/licenses/mit/
