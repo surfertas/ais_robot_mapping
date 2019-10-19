@@ -11,7 +11,7 @@ From command line:
 .. code-block::
 
     conda env create -f environment.yml
-    source activate robo_map
+    conda activate robo_map
     cd robot_mapping
     python main.py
 
