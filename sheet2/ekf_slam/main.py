@@ -1,6 +1,7 @@
 
 import numpy as np
 
+from tools.plot_state import plot_state
 from tools.read_data import read_data
 from tools.read_world import read_world
 from prediction_step import prediction_step
@@ -28,7 +29,7 @@ if __name__=="__main__":
     mu = np.zeros(2*n_landmarks+3)
     rob_sigma = np.zeros((3,3))
     rob_map_sigma = np.zeros((3,2*n_landmarks))
-    map_sigma = 1e9*np.eye(2*n_landmarks)
+    map_sigma = 1e10*np.eye(2*n_landmarks)
     #print(rob_sigma.shape)
     #print(rob_map_sigma.shape)
     #print(map_sigma.shape)
@@ -40,8 +41,15 @@ if __name__=="__main__":
 
 
     for t, sample in enumerate(data.timestep):
+            print(observed_landmarks)
+            if t == 150:
+                break
+
             odom, sensor = sample
 
-            mu, sigma = prediction_step(mu, sigma, odom)
+            mu_bar, sigma_bar = prediction_step(mu, sigma, odom)
 
-            correction_step(mu, sigma, sensor, observed_landmarks)
+            mu, sigma, observed_landmarks = correction_step(mu_bar, sigma_bar, sensor, observed_landmarks)
+
+            plot_state(mu, sigma, landmarks, t, observed_landmarks, sensor)
+            #print(observed_landmarks)
