@@ -20,7 +20,6 @@ if __name__=="__main__":
     # observed_landmarks[i] will be true if the landmark with id = i has been observed at some point by the robot
     observed_landmarks = [False]*n_landmarks
 
-
     # Initialize belief:
     # mu: 2N+3x1 vector representing the mean of the normal distribution
     # The first 3 components of mu correspond to the pose of the robot,
@@ -30,20 +29,13 @@ if __name__=="__main__":
     rob_sigma = np.zeros((3,3))
     rob_map_sigma = np.zeros((3,2*n_landmarks))
     map_sigma = 1e10*np.eye(2*n_landmarks)
-    #print(rob_sigma.shape)
-    #print(rob_map_sigma.shape)
-    #print(map_sigma.shape)
 
     # Construct a (3+3*n_landmarks, 3+3*n_landmarks) matrix
     sigma = np.block([
                 [rob_sigma, rob_map_sigma],
                 [rob_map_sigma.T, map_sigma]])
 
-
     for t, sample in enumerate(data.timestep):
-            print(observed_landmarks)
-            if t == 150:
-                break
 
             odom, sensor = sample
 
