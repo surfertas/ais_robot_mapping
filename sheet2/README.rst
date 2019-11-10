@@ -1,7 +1,10 @@
 ais_ekf_slam
 =================
 
-
+[Autonomous Intelligent Systems #3: Robot Mapping](https://surfertas.github.io/ais/ekf/2019/11/10/ais-ekf-slam.html)
+Todo
+-----
+1. Implement the visualization of the probability ellipses.
 
 Usage
 -----
