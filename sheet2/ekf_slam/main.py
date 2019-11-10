@@ -36,7 +36,6 @@ if __name__=="__main__":
                 [rob_map_sigma.T, map_sigma]])
 
     for t, sample in enumerate(data.timestep):
-
             odom, sensor = sample
 
             mu_bar, sigma_bar = prediction_step(mu, sigma, odom)
