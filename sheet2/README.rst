@@ -1,6 +1,12 @@
 ais_ekf_slam
 =================
 
+.. raw:: html
+
+    <a href='https://www.korabo.io/checkout-page/5e2c4727d31a7a00290de877/5e23f0b31b70f70022ff5933'>
+        <img src='https://img.shields.io/badge/Korabo-donate-blue' alt='donate'>
+    </a>
+
 [Autonomous Intelligent Systems #3: Robot Mapping](https://surfertas.github.io/ais/ekf/2019/11/10/ais-ekf-slam.html)
 Todo
 -----
